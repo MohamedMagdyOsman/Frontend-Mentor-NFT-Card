@@ -1,0 +1,191 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+/* variables */
+:root {
+  /* Primary */
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+
+  /* Neutral */
+  --main-bg: hsl(217, 54%, 11%);
+  --card-bg: hsl(216, 50%, 16%);
+  --line: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+}
+
+/* page reset */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--main-bg);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+p {
+  font-size: 1.6rem;
+  color: var(--soft-blue);
+}
+
+/* generic classes */
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+/* styling */
+main {
+  width: 100vw;
+  height: 100vh;
+  padding: 2.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.crypto-card {
+  width: min-content;
+  height: min-content;
+  max-width: 100%;
+  padding: 2rem;
+  
+  border-radius: 1.5rem;
+  overflow: hidden;
+  
+  background-color: var(--card-bg);
+  box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.3);
+}
+
+.crypto-card .crypto-card__image {
+  width: 29rem;
+  height: 29rem;
+  max-width: 100%;
+  
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  
+  position: relative;
+}
+
+.crypto-card .crypto-card__image .overlap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  opacity: 0;
+  transition-duration: 0.5s;
+  background-color: rgba(0, 255, 247, 0.5);
+}
+
+.crypto-card .crypto-card__image:hover .overlap {
+  opacity: 1;
+}
+
+.crypto-card .crypto-card__image > img {
+  width: 100%;
+  height: 100%;
+}
+
+.crypto-card h1 {
+  color: var(--white);
+  font-weight: 600;
+  font-size: 2rem;
+  cursor: pointer;
+  
+  margin: 1.5rem 0 0.3rem;
+}
+
+.crypto-card h1:hover {
+  color: var(--cyan);
+}
+
+.crypto-card .currency-desc {
+  line-height: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+
+.crypto-card .currency-stats {
+  justify-content: space-between;
+}
+
+.crypto-card .currency-stats .currency-price {
+  align-items: center;
+  column-gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.crypto-card .currency-stats .currency-price > img {
+  width: 1.1rem;
+  height: 2.2rem;
+}
+
+.crypto-card .currency-stats .currency-price > p {
+  color: var(--cyan);
+}
+
+.crypto-card .currency-stats .last-update {
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.crypto-card .currency-stats .last-update > img {
+  width: 2rem;
+  height: 2rem;
+}
+
+hr {
+  margin-bottom: 1rem;
+  height: 0.2rem;
+  border: none;
+  background-color: var(--line);
+}
+
+.crypto-card .author {
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.crypto-card .author .author__image {
+  width: 3.5rem;
+  height: 3.5rem;
+
+  border-radius: 50%;
+  border: 0.2rem solid var(--white);
+}
+
+.crypto-card .author .author__name > span {
+  color: var(--white);
+  cursor: pointer;
+}
+
+.crypto-card .author .author__name > span:hover {
+  color: var(--cyan);
+}
